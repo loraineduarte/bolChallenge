@@ -55,7 +55,7 @@
           <p>6</p>
         </div>
         <div class="pit">
-          <p>6</p>
+          <input type="number" id="pit" placeholder="6" name="result" th:value="${result}" />
         </div>
       </div>
     </div>
@@ -67,7 +67,8 @@
 
   <p class="status">It is player <span class="current-player">one</span>'s turn</p>
 
-  <button class="new-game">New Game</button>
+  <button class="new-game" th:onclick="@{doSomething();}">
+    New Game</button>
 
 </body>
 
