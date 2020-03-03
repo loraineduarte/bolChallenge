@@ -27,20 +27,36 @@ public class Mancala {
     p2_pits.put(6, 6);
   }
 
-  public int getp1_mancala() {
+  public int getP1_mancala() {
     return p1_mancala;
   }
 
-  public void setp1_mancala(int p1_mancala) {
+  public void setP1_mancala(int p1_mancala) {
     this.p1_mancala = p1_mancala;
   }
 
-  public int getp2_mancala() {
+  public Map<Integer, Integer> getP1_pits() {
+    return p1_pits;
+  }
+
+  public void setP1_pits(Map<Integer, Integer> p1_pits) {
+    this.p1_pits = p1_pits;
+  }
+
+  public int getP2_mancala() {
     return p2_mancala;
   }
 
-  public void setp2_mancala(int p2_mancala) {
+  public void setP2_mancala(int p2_mancala) {
     this.p2_mancala = p2_mancala;
+  }
+
+  public Map<Integer, Integer> getP2_pits() {
+    return p2_pits;
+  }
+
+  public void setP2_pits(Map<Integer, Integer> p2_pits) {
+    this.p2_pits = p2_pits;
   }
 
 }
