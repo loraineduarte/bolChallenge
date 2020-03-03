@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<form th:action="@{/}" method="POST" xmlns:th="http://www.w3.org/1999/xhtml"></form>
 
 <head>
   <meta charset="utf-8">
@@ -13,13 +14,13 @@
 
   <div class="board">
     <div class="player-two store">
-      <p></p>
+      <input class="player-two store" type="number" id="p2_mancala" placeholder="0" th:value="${p1_mancala}"></input>
     </div>
 
     <div class="rows">
       <div class="row player-two">
         <div class="pit">
-          <p>6</p>
+          <input class="pit" type="number" id="p2_pit1" placeholder="6" name="result" th:value="${p1_mancala}"></input>
         </div>
         <div class="pit">
           <p>6</p>
@@ -55,7 +56,7 @@
           <p>6</p>
         </div>
         <div class="pit">
-          <input type="number" id="pit" placeholder="6" name="result" th:value="${result}" />
+          <p>6</p>
         </div>
       </div>
     </div>
