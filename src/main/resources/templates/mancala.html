@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<form th:action="@{/}" method="POST" xmlns:th="http://www.w3.org/1999/xhtml"></form>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<form th:action="@{/}" method="GET" xmlns:th="http://www.w3.org/1999/xhtml"></form>
 
 <head>
   <meta charset="utf-8">
@@ -14,56 +15,56 @@
 
   <div class="board">
     <div class="player-two store">
-      <p type="number" id="p2_mancala" placeholder="0" th:value="${p1_mancala}">
+      <p><span th:text="${mancala_P1}"></span>
       </p>
     </div>
 
     <div class="rows">
       <div class="row player-two">
         <div class="pit">
-          <p class="pit" type="number" id="p2_pit1" placeholder="6" name="result" th:value="${p1_mancala}">6</p>
+          <p><span th:text="${P1_pit1}"></span></p>
         </div>
         <div class="pit">
-          <p>6</p>
+          <p><span th:text="${P1_pit2}"></span></p>
         </div>
         <div class="pit">
-          <p>6</p>
+          <p><span th:text="${P1_pit3}"></span></p>
         </div>
         <div class="pit">
-          <p>6</p>
+          <p><span th:text="${P1_pit4}"></span></p>
         </div>
         <div class="pit">
-          <p>6</p>
+          <p><span th:text="${P1_pit5}"></span></p>
         </div>
         <div class="pit">
-          <p>6</p>
+          <p><span th:text="${P1_pit6}"></span></p>
         </div>
       </div>
 
       <div class="row player-one">
         <div class="pit">
-          <p>6</p>
+          <p><span th:text="${P2_pit1}"></span></p>
         </div>
         <div class="pit">
-          <p>6</p>
+          <p><span th:text="${P2_pit2}"></span></p>
         </div>
         <div class="pit">
-          <p>6</p>
+          <p><span th:text="${P2_pit3}"></span></p>
         </div>
         <div class="pit">
-          <p>6</p>
+          <p><span th:text="${P2_pit4}"></span></p>
         </div>
         <div class="pit">
-          <p>6</p>
+          <p><span th:text="${P2_pit5}"></span></p>
         </div>
         <div class="pit">
-          <p>6</p>
+          <p><span th:text="${P2_pit6}"></span></p>
         </div>
       </div>
     </div>
 
     <div class="player-one store">
-      <p></p>
+      <p><span th:text="${mancala_P2}"></span>
     </div>
   </div>
 
