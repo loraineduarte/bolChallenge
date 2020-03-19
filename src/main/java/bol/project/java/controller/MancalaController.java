@@ -26,16 +26,10 @@ import bol.project.java.model.Mancala;
 @Controller
 public class MancalaController {
 
-  @Autowired
-  private UserService userService;
-
-  @Autowired
-  UserFormValidator userFormValidator;
-
-  // Set a form validator
+  // Set a validator
   @InitBinder
   protected void initBinder(WebDataBinder binder) {
-    binder.setValidator(userFormValidator);
+    // binder.setValidator();
   }
 
   Mancala mancalaBoard = Mancala.getInstance();
@@ -63,7 +57,6 @@ public class MancalaController {
     return "mancala";
   }
 
-  // save or update user
   // 1. @ModelAttribute bind form value
   // 2. @Validated form validator
   // 3. RedirectAttributes for flash value
@@ -77,27 +70,15 @@ public class MancalaController {
 
     } else {
 
-      // Add message to flash scope
       redirectAttributes.addFlashAttribute("css", "success");
-      // if (mancalaBoard.isNew()) {
-      // redirectAttributes.addFlashAttribute("msg", "User added successfully!");
-      // } else {
-      // redirectAttributes.addFlashAttribute("msg", "User updated successfully!");
-      // }
 
-      // mancalaBoard.saveOrUpdate(user);
-
-      // POST/REDIRECT/GET
-      return "redirect:/users/" + user.getId();
-
-      // POST/FORWARD/GET
-      // return "user/list";
+      return "redirect:/board/" + mancalaBoard + "/update";
 
     }
 
   }
 
-  // show update form
+  // show update
   @RequestMapping(value = "/board/{mancala}/update", method = RequestMethod.GET)
   public String showUpdateUserForm(@PathVariable("mancala") Mancala mancala, Model model) {
 
