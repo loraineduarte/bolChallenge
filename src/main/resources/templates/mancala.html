@@ -10,7 +10,7 @@
   <link rel="stylesheet" th:href="@{/css/app.css}" />
 </head>
 
-<body data-player="one">
+<body modelAttribute="mancala" data-player="one">
   <h1>Mancala</h1>
 
   <div class="board">
@@ -22,7 +22,7 @@
     <div class="rows">
       <div class="row player-two">
         <div class="pit">
-          <p><span th:text="${P1_pit1}"></span></p>
+          <p><a th:onclick="|alert('oi')|"><span th:text="${P1_pit1}"></span></a></p>
         </div>
         <div class="pit">
           <p><span th:text="${P1_pit2}"></span></p>
@@ -70,7 +70,7 @@
 
   <p class="status">It is player <span class="current-player">one</span>'s turn</p>
 
-  <button class="new-game" th:onclick="@{doSomething();}">
+  <button class="new-game" th:onclick="|alert('oi')|">
     New Game</button>
 
 </body>

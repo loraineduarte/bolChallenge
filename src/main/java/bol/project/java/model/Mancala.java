@@ -1,15 +1,19 @@
 package bol.project.java.model;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 public class Mancala {
 
-  int[] mancalaBoard = {0,6,6,6,6,6,6,0,6,6,6,6,6,6};
+  int[] mancalaBoard = { 0, 6, 6, 6, 6, 6, 6, 0, 6, 6, 6, 6, 6, 6 };
+
+  private static Mancala single_instance = null;
 
   public Mancala() {
+  }
+
+  public static Mancala getInstance() {
+    if (single_instance == null)
+      single_instance = new Mancala();
+
+    return single_instance;
   }
 
   public int[] getMancalaBoard() {
@@ -20,6 +24,11 @@ public class Mancala {
     this.mancalaBoard = mancalaBoard;
   }
 
+  public int[] resetBoard() {
+    mancalaBoard={0,6,6,6,6,6,6,0,6,6,6,6,6,6};
+
+    return mancalaBoard;
+  }
   // public void p1Plays(int position) {
 
   // }
